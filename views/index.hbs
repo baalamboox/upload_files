@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-MX" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/vendor/fontawesome/css/all.min.css">
+    </head>
+    <body>
+        <div class="container vh-100 d-flex align-items-center">
+            <div class="row w-100 mx-auto justify-content-center">
+                <div class="col-md-8">
+                    {{#if alerts}}
+                        <div class="alert alert-success" role="alert">
+                            A simple success alert—check it out!
+                        </div>
+                    {{/if}}
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="uploaded_file" class="form-label"><i class="fa-solid fa-file me-2"></i>Elige el archivo a subir</label>
+                            <input class="form-control form-control-lg" id="uploaded_file" name="uploaded_file" type="file">
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-warning"><i class="fa-solid fa-upload me-2"></i>Subir archivo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
